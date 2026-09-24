@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -44,11 +44,14 @@ export default function RegisterForm() {
         return;
       }
 
-      toast.success(
-        "Account created successfully. Please check your email to verify your account."
-      );
+    toast.success(
+  "Account created. Check your email for your verification code."
+);
 
-      reset();
+reset();
+
+window.location.href =
+  `/verify-email?email=${encodeURIComponent(data.email)}`;
     } catch {
       toast.error("Something went wrong.");
     } finally {
