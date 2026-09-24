@@ -108,7 +108,7 @@ function VerifyEmailForm() {
               value={code}
               onChange={(e) =>
                 setCode(
-                  e.target.value.replace(/\D/g, "").slice(0, 6)
+                  e.target.value.replace(/\D/g, "").slice(0, 8)
                 )
               }
               placeholder="Enter 8-digit code"
@@ -162,3 +162,4 @@ export default function VerifyEmailPage() {
     </Suspense>
   );
 }
+
