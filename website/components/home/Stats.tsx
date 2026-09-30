@@ -1,4 +1,4 @@
-const stats = [
+﻿const stats = [
   {
     value: "92%",
     label: "Verified Win Rate",

@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, ReactNode } from "react";
+﻿import { InputHTMLAttributes, ReactNode } from "react";
 
 interface AuthInputProps
   extends InputHTMLAttributes<HTMLInputElement> {

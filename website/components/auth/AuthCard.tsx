@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 
@@ -40,7 +40,7 @@ export default function AuthCard({
           </>
         ) : (
           <>
-            Don't have an account?{" "}
+            Do not have an account?{" "}
             <Link
               href="/register"
               className="font-medium text-blue-400 hover:text-blue-300"

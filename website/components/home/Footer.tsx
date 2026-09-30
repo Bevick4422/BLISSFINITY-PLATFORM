@@ -1,63 +1,48 @@
-import { Globe, Mail, MessageCircle } from "lucide-react";
-
-const links = {
-  Platform: ["Features", "Performance", "Roadmap", "FAQ"],
-  Company: ["About", "Community", "Contact", "Privacy"],
-};
+﻿import Link from "next/link";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-slate-800 bg-slate-950">
-      <div className="mx-auto max-w-7xl px-6 py-16">
-        <div className="grid gap-10 md:grid-cols-4">
+    <footer className="bg-[#070b14] px-6 py-14 text-white sm:px-10 lg:px-14">
+      <div className="mx-auto max-w-[1440px]">
+        <div className="grid gap-10 border-b border-white/10 pb-12 md:grid-cols-[1.5fr_.7fr_.7fr]">
           <div>
-            <h2 className="text-2xl font-bold text-white">Blissfinity</h2>
-            <p className="mt-4 text-slate-400">
-              Professional crypto futures signals backed by disciplined market analysis and transparent performance.
+            <div className="flex items-center gap-3">
+              <div className="h-10 w-10 overflow-hidden rounded-full border border-[#2274da]/35">
+                <img src="/images/Blissfinity-logo.png.jpeg" alt="Blissfinity" className="h-full w-full object-cover" />
+              </div>
+              <div className="font-serif text-xl">BLISSFINITY</div>
+            </div>
+            <p className="mt-5 max-w-md text-sm leading-7 text-[#8f9db3]">
+              A trading community and ecosystem built around education,
+              discipline, accountability and structured market work.
             </p>
+          </div>
 
-            <div className="mt-6 flex gap-4">
-              <Globe className="h-5 w-5 cursor-pointer text-slate-400 hover:text-white" />
-              <MessageCircle className="h-5 w-5 cursor-pointer text-slate-400 hover:text-white" />
-              <Mail className="h-5 w-5 cursor-pointer text-slate-400 hover:text-white" />
+          <div>
+            <h3 className="text-sm font-semibold text-white">Quick links</h3>
+            <div className="mt-4 space-y-3 text-sm text-[#8f9db3]">
+              <Link href="#story" className="block hover:text-white">Our Story</Link>
+              <Link href="#resources" className="block hover:text-white">Resources</Link>
+              <Link href="#partners" className="block hover:text-white">Partners</Link>
+              <Link href="#contact" className="block hover:text-white">Contact</Link>
             </div>
           </div>
 
-          {Object.entries(links).map(([title, items]) => (
-            <div key={title}>
-              <h3 className="font-semibold text-white">{title}</h3>
-              <ul className="mt-4 space-y-3">
-                {items.map((item) => (
-                  <li key={item} className="text-slate-400 hover:text-white cursor-pointer">
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-
           <div>
-            <h3 className="font-semibold text-white">Newsletter</h3>
-            <p className="mt-4 text-slate-400">
-              Get updates about new features and trading insights.
-            </p>
-
-            <input
-              type="email"
-              placeholder="Email address"
-              className="mt-6 w-full rounded-xl border border-slate-700 bg-slate-900 px-4 py-3 text-white outline-none"
-            />
-
-            <button className="mt-4 w-full rounded-xl bg-blue-600 py-3 font-semibold text-white hover:bg-blue-500">
-              Subscribe
-            </button>
+            <h3 className="text-sm font-semibold text-white">Platform</h3>
+            <div className="mt-4 space-y-3 text-sm text-[#8f9db3]">
+              <Link href="/login" className="block hover:text-white">Log in</Link>
+              <Link href="/register" className="block hover:text-white">Create account</Link>
+            </div>
           </div>
         </div>
 
-        <div className="mt-12 border-t border-slate-800 pt-8 text-center text-slate-500">
-          © 2026 Blissfinity. All rights reserved.
+        <div className="flex flex-col gap-3 pt-7 text-xs text-[#69778c] sm:flex-row sm:items-center sm:justify-between">
+          <span>(c) {new Date().getFullYear()} Blissfinity. All rights reserved.</span>
+          <span>Built around clarity.</span>
         </div>
       </div>
     </footer>
   );
 }
+

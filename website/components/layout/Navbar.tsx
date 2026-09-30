@@ -1,79 +1,62 @@
-"use client";
+﻿"use client";
 
-import Image from "next/image";
 import Link from "next/link";
 
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "Signals", href: "/signals" },
-  { name: "Performance", href: "/performance" },
-  { name: "About", href: "/about" },
+const links = [
+  ["Our Story", "#story"],
+  ["Values", "#values"],
+  ["Founder", "#founder"],
+  ["Resources", "#resources"],
+  ["Affiliates", "#affiliates"],
+  ["Contact", "#contact"],
 ];
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-800/60 bg-slate-950/80 backdrop-blur-xl">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6">
-
-        {/* Logo */}
-
-        <Link href="/" className="flex items-center gap-3">
-
-          <Image
-            src="/images/blissfinity-logo.png"
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-[#070b14]/95 backdrop-blur-xl">
+      <div className="mx-auto flex h-[106px] max-w-[1600px] items-center justify-between px-7 lg:px-16">
+        <Link href="/" className="flex shrink-0 items-center gap-4">
+          <img
+            src="/images/Blissfinity-logo.png.jpeg"
             alt="Blissfinity"
-            width={44}
-            height={44}
-            priority
-            className="h-11 w-11 object-contain"
+            className="h-16 w-16 rounded-full object-cover"
           />
-
-          <div className="leading-tight">
-            <h1 className="text-xl font-bold tracking-tight text-white">
-              Blissfinity
-            </h1>
-
-            <p className="text-sm text-slate-400">
-              Crypto Futures Platform
-            </p>
+          <div className="leading-none">
+            <div className="font-serif text-[29px] font-semibold tracking-[-0.02em] text-white">
+              BLISSFINITY
+            </div>
+            <div className="mt-2 text-[12px] font-medium tracking-[0.30em] text-[#aebbd4]">
+              TRADING PLATFORM
+            </div>
           </div>
-
         </Link>
 
-        {/* Navigation */}
-
-        <nav className="hidden items-center gap-8 lg:flex">
-          {navigation.map((item) => (
+        <nav className="hidden items-center gap-9 lg:flex">
+          {links.map(([label, href]) => (
             <Link
-              key={item.name}
-              href={item.href}
-              className="text-sm font-medium text-slate-400 transition-colors hover:text-white"
+              key={label}
+              href={href}
+              className="text-[17px] text-[#c7d0df] transition hover:text-white"
             >
-              {item.name}
+              {label}
             </Link>
           ))}
         </nav>
 
-        {/* Actions */}
-
-        <div className="hidden items-center gap-4 lg:flex">
-
+        <div className="flex items-center gap-7">
           <Link
             href="/login"
-            className="text-sm font-medium text-slate-300 transition hover:text-white"
+            className="hidden text-[17px] text-[#d4dbea] transition hover:text-white sm:block"
           >
-            Login
+            Log in
           </Link>
-
           <Link
-            href="/register"
-            className="rounded-xl bg-blue-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-blue-700"
+            href="/login"
+            className="rounded-full border border-white/15 bg-white/[0.06] px-7 py-4 font-serif text-[17px] font-semibold text-white transition hover:border-white/30 hover:bg-white/[0.10]"
           >
-            Join Free
+            Enter Platform <span className="ml-2 text-[#d299fa]">â†—</span>
           </Link>
-
         </div>
-
       </div>
     </header>
   );

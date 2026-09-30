@@ -1,4 +1,4 @@
-import {
+﻿import {
   Activity,
   Shield,
   BarChart3,
@@ -12,39 +12,39 @@ import FeatureCard from "./FeatureCard"
 const features = [
   {
     icon: <Activity size={26} />,
-    title: "Professional Analysis",
+    title: "Structured Market Analysis",
     description:
-      "Every signal is built on structured market analysis instead of emotional decision-making.",
+      "Every qualified signal is built around structured market analysis and defined market conditions.",
   },
   {
     icon: <Shield size={26} />,
-    title: "Risk Management",
+    title: "Defined Risk",
     description:
-      "Each setup includes entry, stop-loss, take-profit, and disciplined risk parameters.",
+      "Each setup includes an entry, stop-loss, take-profit targets, and structured risk parameters.",
   },
   {
     icon: <BarChart3 size={26} />,
     title: "Transparent Performance",
     description:
-      "Review historical results and performance metrics with complete transparency.",
+      "Review published signals, historical trade outcomes, and performance metrics transparently.",
   },
   {
     icon: <Bell size={26} />,
-    title: "Real-Time Alerts",
+    title: "Signal Alerts",
     description:
-      "Receive timely notifications when qualified trading opportunities appear.",
+      "Receive timely notifications when qualified trading opportunities meet the required conditions.",
   },
   {
     icon: <Globe size={26} />,
-    title: "Multi-Market Coverage",
+    title: "Crypto Futures Markets",
     description:
-      "Monitor leading crypto futures markets from one professional platform.",
+      "Monitor selected crypto futures markets through one professional trading platform.",
   },
   {
     icon: <Users size={26} />,
-    title: "Trading Community",
+    title: "Trader Community",
     description:
-      "Learn alongside a growing community focused on disciplined execution.",
+      "Connect with traders focused on market awareness, disciplined execution, and continuous improvement.",
   },
 ]
 
@@ -64,8 +64,9 @@ export default function Features() {
           </h2>
 
           <p className="mt-6 text-lg leading-8 text-slate-400">
-            Blissfinity combines structured analysis, risk management,
-            and transparent reporting into a professional trading experience.
+            Blissfinity brings structured market analysis, qualified signals,
+            defined risk, and transparent performance together in one
+            professional trading experience.
           </p>
 
         </div>

@@ -1,15 +1,7 @@
-const metrics = [
-  { title: "Win Rate", value: "92%", note: "Sample Data" },
-  { title: "Average R:R", value: "1:3", note: "Risk / Reward" },
-  { title: "Signals", value: "500+", note: "Sample Data" },
-  { title: "Max Drawdown", value: "6.2%", note: "Sample Data" },
-]
-
-export default function Performance() {
+﻿export default function Performance() {
   return (
     <section className="border-t border-slate-800 py-24">
       <div className="mx-auto max-w-7xl px-6">
-
         <div className="max-w-3xl">
           <p className="text-sm font-semibold uppercase tracking-widest text-blue-400">
             Performance
@@ -19,64 +11,78 @@ export default function Performance() {
             Transparent Performance Tracking
           </h2>
 
-          <p className="mt-6 text-lg text-slate-400">
-            Every completed trade contributes to a measurable track record.
-            Performance shown below is demonstration data until live results
-            are available.
+          <p className="mt-6 text-lg leading-8 text-slate-400">
+            Every completed signal contributes to a measurable track record.
+            Blissfinity is designed to show performance from recorded trades
+            rather than promotional estimates or hypothetical results.
           </p>
         </div>
 
         <div className="mt-16 grid gap-8 lg:grid-cols-2">
-
-          {/* Chart */}
+          {/* Performance Preview */}
 
           <div className="rounded-3xl border border-slate-800 bg-slate-900 p-8">
-
             <div className="mb-6 flex items-center justify-between">
-
               <h3 className="text-xl font-semibold text-white">
                 Equity Curve
               </h3>
 
-              <span className="rounded-full bg-blue-500/10 px-3 py-1 text-sm text-blue-400">
-                Demo
+              <span className="rounded-full bg-slate-800 px-3 py-1 text-sm text-slate-400">
+                Awaiting Verified Data
               </span>
-
             </div>
 
-            <div className="flex h-72 items-center justify-center rounded-2xl bg-slate-800 text-slate-500">
-              Equity Curve (Coming Soon)
-            </div>
+            <div className="flex h-72 flex-col items-center justify-center rounded-2xl bg-slate-800 px-6 text-center">
+              <p className="text-lg font-semibold text-slate-300">
+                Performance tracking is being established.
+              </p>
 
+              <p className="mt-3 max-w-md text-sm leading-6 text-slate-500">
+                Verified performance metrics will be displayed here as
+                completed Blissfinity signals are recorded and closed.
+              </p>
+            </div>
           </div>
 
           {/* Metrics */}
 
           <div className="grid gap-6 sm:grid-cols-2">
-
-            {metrics.map((metric) => (
+            {[
+              "Win Rate",
+              "Average Risk / Reward",
+              "Completed Signals",
+              "Maximum Drawdown",
+            ].map((metric) => (
               <div
-                key={metric.title}
+                key={metric}
                 className="rounded-3xl border border-slate-800 bg-slate-900 p-6"
               >
                 <p className="text-sm text-slate-400">
-                  {metric.title}
+                  {metric}
                 </p>
 
-                <h3 className="mt-3 text-4xl font-bold text-white">
-                  {metric.value}
+                <h3 className="mt-3 text-3xl font-bold text-white">
+                  -
                 </h3>
 
                 <p className="mt-2 text-sm text-slate-500">
-                  {metric.note}
+                  Verified results pending
                 </p>
               </div>
             ))}
-
           </div>
+        </div>
 
+        <div className="mt-10 text-center">
+          <a
+            href="/performance"
+            className="inline-flex rounded-xl border border-slate-700 px-6 py-3 font-semibold text-white transition hover:border-blue-500/50 hover:bg-slate-800"
+          >
+            View Performance
+          </a>
         </div>
       </div>
     </section>
-  )
+  );
 }
+

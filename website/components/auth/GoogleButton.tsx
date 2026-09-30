@@ -1,21 +1,43 @@
+﻿"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+import { toast } from "sonner";
+
+import { signInWithGoogle } from "@/lib/auth/auth";
 
 interface GoogleButtonProps {
   text?: string;
-  onClick?: () => void;
   disabled?: boolean;
 }
 
 export default function GoogleButton({
   text = "Continue with Google",
-  onClick,
   disabled = false,
 }: GoogleButtonProps) {
+  const [loading, setLoading] = useState(false);
+
+  async function handleGoogleSignIn() {
+    try {
+      setLoading(true);
+
+      const { error } = await signInWithGoogle();
+
+      if (error) {
+        toast.error(error.message);
+        setLoading(false);
+      }
+    } catch {
+      toast.error("Unable to continue with Google.");
+      setLoading(false);
+    }
+  }
+
   return (
     <button
       type="button"
-      onClick={onClick}
-      disabled={disabled}
+      onClick={handleGoogleSignIn}
+      disabled={disabled || loading}
       className="
         flex w-full items-center justify-center gap-3
         rounded-xl border border-slate-700
@@ -36,7 +58,9 @@ export default function GoogleButton({
         height={20}
       />
 
-      <span>{text}</span>
+      <span>
+        {loading ? "Connecting..." : text}
+      </span>
     </button>
   );
 }

@@ -1,4 +1,4 @@
-import { CheckCircle2, Clock3 } from "lucide-react";
+﻿import { CheckCircle2, Clock3 } from "lucide-react";
 
 type RoadmapPhase = [string, string, boolean];
 

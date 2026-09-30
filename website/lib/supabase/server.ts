@@ -1,4 +1,4 @@
-import { createServerClient } from "@supabase/ssr";
+﻿import { createServerClient } from "@supabase/ssr";
 import { cookies } from "next/headers";
 
 export async function createClient() {
@@ -12,20 +12,13 @@ export async function createClient() {
         get(name: string) {
           return cookieStore.get(name)?.value;
         },
-        set(name: string, value: string, options) {
-          cookieStore.set({
-            name,
-            value,
-            ...options,
-          });
+
+        set() {
+          // Cookie updates are handled by middleware.
         },
-        remove(name: string, options) {
-          cookieStore.set({
-            name,
-            value: "",
-            ...options,
-            maxAge: 0,
-          });
+
+        remove() {
+          // Cookie updates are handled by middleware.
         },
       },
     }

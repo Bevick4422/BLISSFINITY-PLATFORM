@@ -1,18 +1,7 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+﻿import type { Metadata } from "next";
 import { Toaster } from "sonner";
 
 import "./globals.css";
-
-const geistSans = Geist({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
-
-const geistMono = Geist_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-});
 
 export const metadata: Metadata = {
   title: "Blissfinity Signal",
@@ -28,7 +17,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`dark ${geistSans.variable} ${geistMono.variable}`}
+      className="dark"
       suppressHydrationWarning
     >
       <body className="min-h-screen bg-slate-950 text-white antialiased">
@@ -44,3 +33,6 @@ export default function RootLayout({
     </html>
   );
 }
+
+
+

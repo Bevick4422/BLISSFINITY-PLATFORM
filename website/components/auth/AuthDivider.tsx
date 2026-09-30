@@ -1,4 +1,4 @@
-interface AuthDividerProps {
+﻿interface AuthDividerProps {
   text?: string;
 }
 

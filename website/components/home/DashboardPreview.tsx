@@ -1,4 +1,4 @@
-import { Activity, TrendingUp, BarChart3, ShieldCheck } from "lucide-react";
+﻿import { Activity, TrendingUp, BarChart3, ShieldCheck } from "lucide-react";
 
 const stats=[
 {icon:Activity,title:"Active Signals",value:"12",color:"text-blue-400"},

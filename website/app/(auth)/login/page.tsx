@@ -1,10 +1,10 @@
-import AuthCard from "@/components/auth/AuthCard";
+﻿import AuthCard from "@/components/auth/AuthCard";
 
 function Feature({ text }: { text: string }) {
   return (
     <div className="flex items-center gap-4">
       <div className="flex h-10 w-10 items-center justify-center rounded-full bg-blue-600/10 text-blue-400">
-        ✓
+        âœ“
       </div>
 
       <span className="text-slate-300">{text}</span>
