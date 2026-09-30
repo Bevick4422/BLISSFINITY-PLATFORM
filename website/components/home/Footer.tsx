@@ -8,7 +8,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3">
               <div className="h-10 w-10 overflow-hidden rounded-full border border-[#2274da]/35">
-                <img src="/images/Blissfinity-logo.png.jpeg" alt="Blissfinity" className="h-full w-full object-cover" />
+                <img src="/images/blissfinity-logo.png" alt="Blissfinity" className="h-full w-full object-cover" />
               </div>
               <div className="font-serif text-xl">BLISSFINITY</div>
             </div>
@@ -45,4 +45,5 @@ export default function Footer() {
     </footer>
   );
 }
+
 
