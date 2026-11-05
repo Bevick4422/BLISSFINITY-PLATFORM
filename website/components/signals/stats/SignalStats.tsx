@@ -1,22 +1,14 @@
 ﻿"use client";
 
 import { useEffect, useState } from "react";
+import { getDashboardStats } from "@/lib/api";
 
 interface DashboardStats {
-  total_trades: number;
   open_trades: number;
   closed_trades: number;
   wins: number;
-  losses: number;
-  breakevens: number;
   win_rate: number;
-  total_rr: number;
-  average_rr: number;
 }
-
-const API_URL =
-  process.env.NEXT_PUBLIC_API_URL ??
-  "http://127.0.0.1:8000";
 
 export default function SignalStats() {
   const [stats, setStats] = useState<DashboardStats | null>(null);
@@ -25,19 +17,7 @@ export default function SignalStats() {
   useEffect(() => {
     async function loadStats() {
       try {
-        const response = await fetch(
-          `${API_URL}/api/dashboard`,
-          {
-            cache: "no-store",
-          }
-        );
-
-        if (!response.ok) {
-          throw new Error("Failed to fetch dashboard statistics");
-        }
-
-        const data = await response.json();
-
+        const data = await getDashboardStats();
         setStats(data);
       } catch (err) {
         console.error("Signal statistics error:", err);
@@ -96,9 +76,9 @@ export default function SignalStats() {
       subtitle: "Based on Closed Trades",
     },
     {
-      title: "Average R:R",
-      value: `1 : ${stats.average_rr}`,
-      subtitle: "Current Average",
+      title: "Wins",
+      value: stats.wins.toString(),
+      subtitle: "Winning Trades",
     },
   ];
 
