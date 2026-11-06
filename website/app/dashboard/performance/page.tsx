@@ -1,7 +1,7 @@
-﻿import PageHeader from "@/components/layout/PageHeader";
+import PageHeader from "@/components/layout/PageHeader";
 import PerformanceSnapshot from "@/components/dashboard/PerformanceSnapshot";
 
-import { getDashboardStats } from "@/lib/api";
+import { getServerDashboardStats as getDashboardStats } from "@/lib/api-server";
 
 export default async function PerformancePage() {
   const stats = await getDashboardStats();

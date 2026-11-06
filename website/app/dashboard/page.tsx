@@ -1,4 +1,4 @@
-﻿import DashboardStats from "@/components/dashboard/DashboardStats";
+import DashboardStats from "@/components/dashboard/DashboardStats";
 import TradingChart from "@/components/dashboard/TradingChart";
 import MarketSnapshot from "@/components/dashboard/MarketSnapshot";
 import ActiveSignals from "@/components/dashboard/ActiveSignals";
@@ -6,9 +6,9 @@ import PerformanceSnapshot from "@/components/dashboard/PerformanceSnapshot";
 import RecentNotifications from "@/components/dashboard/RecentNotifications";
 
 import {
-  getDashboardStats,
-  getOpenSignals,
-} from "@/lib/api";
+  getServerDashboardStats as getDashboardStats,
+  getServerOpenSignals as getOpenSignals,
+} from "@/lib/api-server";
 
 export default async function DashboardPage() {
   const stats = await getDashboardStats();

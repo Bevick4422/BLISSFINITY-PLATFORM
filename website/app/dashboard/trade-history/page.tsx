@@ -1,9 +1,9 @@
-﻿import PageHeader from "@/components/layout/PageHeader";
+import PageHeader from "@/components/layout/PageHeader";
 import TradeHistoryStats from "@/components/trade-history/stats/TradeHistoryStats";
 import TradeHistoryFilters from "@/components/trade-history/filters/TradeHistoryFilters";
 import TradeHistoryTable from "@/components/trade-history/table/TradeHistoryTable";
 
-import { getTradeHistory } from "@/lib/api";
+import { getServerTradeHistory as getTradeHistory } from "@/lib/api-server";
 
 export default async function TradeHistoryPage() {
   const trades = await getTradeHistory();
