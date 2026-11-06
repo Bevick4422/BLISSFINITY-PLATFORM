@@ -1,4 +1,6 @@
-﻿const API_URL =
+import { createClient } from "@/lib/supabase/client";
+
+const API_URL =
   process.env.NEXT_PUBLIC_API_URL ??
   "http://127.0.0.1:8000";
 
@@ -6,17 +8,29 @@
  * Dashboard Statistics
  */
 export async function getDashboardStats() {
+  const supabase = createClient();
+
+  const {
+    data: { session },
+    error: sessionError,
+  } = await supabase.auth.getSession();
+
+  if (sessionError || !session?.access_token) {
+    throw new Error("AUTHENTICATION REQUIRED");
+  }
+
   const response = await fetch(
     `${API_URL}/api/dashboard`,
     {
+      headers: {
+        Authorization: `Bearer ${session.access_token}`,
+      },
       cache: "no-store",
     }
   );
 
   if (!response.ok) {
-    throw new Error(
-      "Failed to fetch dashboard statistics."
-    );
+    throw new Error("Failed to fetch dashboard statistics.");
   }
 
   return response.json();
